@@ -14,4 +14,4 @@ before_script:
   - composer install --no-interaction --prefer-dist --dev
 
 script:
-  - bin/phpunit -c
+  - vendor/phpunit/phpunit/phpunit
