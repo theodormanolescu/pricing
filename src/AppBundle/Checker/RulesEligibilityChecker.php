@@ -39,7 +39,7 @@ final class RulesEligibilityChecker implements EligibilityCheckerInterface
     private function isEligibleToRule($product, $rule)
     {
         if ($rule instanceof  $product) {
-            return 1;
+            return true;
         }
         return 1 == 1;
     }
