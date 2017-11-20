@@ -3,7 +3,7 @@
 namespace AppBundle\Calculator;
 
 use AppBundle\Action\PriceApplicatorInterface;
-use AppBundle\Checker\Eligibility\PricingEligibilityCheckerInterface;
+use AppBundle\Checker\Eligibility\EligibilityCheckerInterface;
 use AppBundle\Model\ProductInterface;
 
 /**
@@ -13,7 +13,7 @@ use AppBundle\Model\ProductInterface;
  */
 class FallbackSelectionCriteriaStrategy implements CalculationStrategyInterface
 {
-    /** @var  PricingEligibilityCheckerInterface */
+    /** @var  EligibilityCheckerInterface */
     private $eligibilityChecker;
     /** @var  PriceApplicatorInterface */
     private $applicator;

@@ -9,7 +9,7 @@ use AppBundle\Model\ProductInterface;
  *
  * @package AppBundle\Checker\Eligibility
  */
-interface PricingEligibilityCheckerInterface
+interface EligibilityCheckerInterface
 {
     /**
      * @param ProductInterface $product
