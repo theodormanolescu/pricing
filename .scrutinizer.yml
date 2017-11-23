@@ -1,9 +1,6 @@
 filter:
-    excluded_paths:
-        - 'bin/*'
-        - 'vendor/*'
-        - 'var/*'
-        - 'web/*'
+    paths:
+        - 'src/*'
 
 checks:
     php:
