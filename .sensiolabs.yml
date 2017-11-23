@@ -1,6 +1,0 @@
-notifications:
-  - type: slack
-    url: https://hooks.slack.com/services/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
-    channel: '#pricing'
-    on_success: true
-    on_failure: true
