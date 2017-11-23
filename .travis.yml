@@ -1,25 +1,20 @@
 language: php
-
 php:
   - 7.0
-
 sudo: false
-
 cache:
   directories:
-    - $HOME/.composer/cache
-
+    - "$HOME/.composer/cache"
 before_script:
   - composer self-update
   - composer install --no-interaction --prefer-dist --dev
-
 script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
-
-
 after_script:
   - |
       wget https://scrutinizer-ci.com/ocular.phar
       php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 notifications:
-   slack: beering:EIMi2idIpCjhtN3uaLtnVfCg
+  slack:
+    rooms:
+      secure: uc0mZRITUfaOD+35Ts/muAZsOe95eRbViYrfxr9ioJ5AwJSKNPuxPiEWyO3EnPxjoeaYi8dtYcIXV4QmbrB4Bg9sL5WD/uzZzbMxnpUhHfCWQ913AOYmRYV1uiaqKg+gIyMVKAGeXOe9NaLJY1rw+szvs/vIRJXLyw6dhqCqQ6h4vmFFsIiVVabyVo4mmzjIRuAKfqQV9Ppdcuc8haeTDZWYXAqsGiZEesnfHHm9A+ol4weFMY0KQr4AG8bdcy5dB1ERHLhUfO+ovCdu9s6GflzW9Xxbu87OSXefbNrkx6A8C9eebknCZGrU2RzwI6VSBLi1r2QJ2uj40booAF7MeYtv4EhoZL2p2Omh52KUB4C+RXgkQSeBO69KM6aR5ZBDBteJv9iaX9tVU0SJmEmPdQzjKnzIxAD3Iqg8x+/9dVhIg2Vg4Hz0RU9WF3/RqXPWLqy5HGCKVc/8AVZd8wH8NAnMJqm3gsZ0/7FdYhPZmERU7Qm4KOJ9tFswBy0v1pWHNUdQcICeKKIfg40XUJ0+CbXwxFzrZ8j5Z8Tw7Fy4tW+inCjvv/XhPxTmrtVEoSHz5p0PUgFeb+2ad1gPN30wD2jCQG20ETmIWcpkxxf50ZtEetgOskNXri0c5nN986f25AaujVhvKArx9YGRMO2XxkV6gc1PQKD2YS7ETz4ZY4k=
